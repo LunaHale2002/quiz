@@ -5,58 +5,68 @@ const retryButton = document.getElementById('retry');
 const showAnswerButton = document.getElementById('showAnswer');
 
 const quizData = [
-    {
-      question: "What is the title of the Shogun Raiden within the Seven Archons ?",
-      options: ["The Eternal Wanderer", "The God Irremovable", "The Receptacle of Eternity", "The demiurge",],
-      answer: "The Receptacle of Eternity",
-    },
-    {
-      question: "What is the name of the main stalking that players control from the start of the game ?",
-      options: ["Venti", "Paimon", "Lumine / Aether", "Diluc"],
-      answer: "Lumine / Aether",
-    },
-    {
-      question: "Who is the god of freedom (city of Mondstadt) ?",
-      options: ["Venti", "Jean", "Diluc", "Kaeya"],
-      answer: "Venti",
-    },
-    {
-      question: "How the children of the hearth nickname arlecchino ?",
-      options: ["Father", "Mother", "Lady", "Goddess"],
-      answer: "Father",
-    },
-    {
-      question: "What is the name of the premium currency used for wishes ?",
-      options: ["Mora", "Primogemmes", "Résine originel", "Pierre de destin",],
-      answer: "Primogemmes",
-    },
-    {
-      question: "What is the real name of Dainslef ?",
-      options: ["The Guardian of the Gates", "The Eternal Twilight", "The Chain Breaker", "The former king of khaenri'ah"],
-      answer: "The Eternal Twilight",
-    },
-    {
-      question: "Who is Furina ?",
-      options: ["The real Archon Hydro", "The best actress in the world", "A simple human", "A Fatui",],
-      answer: "The best actress in the world",
-    },
-    {
-      question: "Who is Arlecchino ?",
-      options: ["The goddess of Sheznaya", "An Executioner", "A simple pnj", "The Goddess of Eternity"],
-      answer: "An Executioner",
-    },
-    {
-      question: "What is the name of Zhongli's passive talent that increases the durability of his shield ?",
-      options: ["Conqueror of evil", "Dominus Lapidis", "Jade's will", "Resolution of Falling Star",],
-      answer: "Resolution of Falling Star",
-    },
-    {
-      question: "What is the real name of the Shogun Raiden ?",
-      options: ["Ei", "Ayaka", "Yae", "Makoto"],
-      answer: "Ei",
-    },
+  {
+    imgUrl: "public/travelers.avif",
+    question: "What is the name of the main character that players control from the start of the game?",
+    options: ["Venti", "Paimon", "Lumine / Aether", "Diluc"],
+    answer: "Lumine / Aether",
+  },
+  {
+    imgUrl: "public/venti.jpg",
+    question: "Who is the god of freedom (city of Mondstadt)?",
+    options: ["Venti", "Jean", "Diluc", "Kaeya"],
+    answer: "Venti",
+  },
+  {
+    imgUrl: "public/primogems.avif",
+    question: "What is the name of the premium currency used for wishes?",
+    options: ["Mora", "Primogems", "Original resin", "Stone of destiny"],
+    answer: "Primogems",
+  },
+  {
+    imgUrl: "public/dainsleif.webp",
+    question: "What is the real name of Dainslef?",
+    options: ["The Guardian of the Gates", "The Eternal Twilight", "The Chain Breaker", "The former king of khaenri'ah"],
+    answer: "The Eternal Twilight",
+  },
+  {
+    imgUrl: "public/zhongli.jpg",
+    question: "What is the name of Zhongli's passive talent that increases the durability of his shield?",
+    options: ["Conqueror of evil", "Dominus Lapidis", "Jade's will", "Resolution of Falling Star"],
+    answer: "Resolution of Falling Star",
+  },
+  {
+    imgUrl: "public/Raiden Ei.avif",
+    question: "What is the title of the Shogun Raiden within the Seven Archons?",
+    options: ["The Eternal Wanderer", "The God Irremovable", "The Receptacle of Eternity", "The demiurge"],
+    answer: "The Receptacle of Eternity",
+  },
+  {
+    imgUrl: "public/raiden-shogun-ei.jpg",
+    question: "What is the real name of the Shogun Raiden?",
+    options: ["Ei", "Ayaka", "Yae", "Makoto"],
+    answer: "Ei",
+  },
+  {
+    imgUrl: "public/furina.jpg",
+    question: "Who is Furina?",
+    options: ["The real Archon Hydro", "The best actress in the world", "A simple human", "A Fatui"],
+    answer: "The best actress in the world",
+  },
+  {
+    imgUrl: "public/arlecchino-childrens.webp",
+    question: "How do the children of the hearth nickname Arlecchino?",
+    options: ["Father", "Mother", "Lady", "Goddess"],
+    answer: "Father",
+  },
+  {
+    imgUrl: "public/arlecchino.jpg",
+    question: "Who is Arlecchino?",
+    options: ["The goddess of Sheznaya", "An Executioner", "A simple pnj", "The Goddess of Eternity"],
+    answer: "An Executioner",
+  },
 ];
-  
+
 let currentQuestion = 0;
 let score = 0;
 let incorrectAnswers = [];
@@ -73,7 +83,7 @@ function displayQuestion() {
 
   const questionElement = document.createElement('div');
   questionElement.className = 'question';
-  questionElement.innerHTML = questionData.question;
+  questionElement.innerHTML = `<img src="${questionData.imgUrl}" alt="Question Image"><br>${questionData.question}`;
 
   const optionsElement = document.createElement('div');
   optionsElement.className = 'options';
